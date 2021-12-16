@@ -3,3 +3,39 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    text-align: center;
+}
+
+.city-card {
+    border: 1px solid black;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 15px 30px;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* .city-information {
+    display: none;
+} */
+
+.city-name {
+    background-color: lightgray
+}
+
+.grid-2-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.weather-icon {
+    grid-row: 1/span 4;
+    align-self: center;
+}
