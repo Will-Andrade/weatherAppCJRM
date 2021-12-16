@@ -9,27 +9,22 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="app-header">
             <h1>Weather App</h1>
         </header>
     
         <main class="city-card">
-            <div>
-                <!-- Os dois aqui porque irão um do lado do outro -->
-                <form>
-                    <label for="city">Insert the name of a city</label>
-                    <input type="text" name="city" placeholder="Ex: Miami" autofocus autocomplete="off" />
-                </form>
-                <!-- <button type="submit">
-                    Enviar
-                    <i>Icon</i>
-                </button> -->
-            </div>
-            <section>
-                <!-- Resto do conteúdo que vai aparecer após a query -->
-                <h2>Weather in -City-</h2>
-                <div>
-                    <div>Weather icon</div>
+            <!-- Os dois aqui porque irão um do lado do outro -->
+            <form class="form-container">
+                <input type="text" name="city" placeholder="Enter a city" autofocus autocomplete="off" />
+                <button type="submit">Get weather</button>
+            </form>
+
+            <!-- Resto do conteúdo que vai aparecer após a query -->
+            <section class="city-information">
+                <h2 class="city-name">Weather in -City-</h2>
+                <div class="grid-2-columns">
+                    <div class="weather-icon">Weather icon</div>
                     <p>Weather text</p>
                     <p>temperature</p>
                     <p>Wind velocity</p>
