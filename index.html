@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Document</title>
+    <title>Weather App</title>
 </head>
 <body>
     <div class="container">
-        <header class="app-header">
-            <h1>Weather App</h1>
+        <header>
+            <h1>Weather Information</h1>
         </header>
     
         <main class="city-card">
-            <!-- Os dois aqui porque irão um do lado do outro -->
-            <form class="form-container">
-                <input type="text" name="city" placeholder="Enter a city" autofocus autocomplete="off" />
-                <button type="submit">Get weather</button>
+            <form data-js="query-form" class="form-container">
+                <input type="text" name="city" class="search-input" placeholder="Ex: Miami" autofocus autocomplete="off" />
             </form>
 
-            <!-- Resto do conteúdo que vai aparecer após a query -->
-            <section class="city-information">
-                <h2 class="city-name">Weather in -City-</h2>
-                <div class="grid-2-columns">
-                    <div class="weather-icon">Weather icon</div>
-                    <p>Weather text</p>
-                    <p>temperature</p>
-                    <p>Wind velocity</p>
-                    <p>Humidity</p>
+            <section data-js="city-weather" class="city-information">
+                <h2>Weather in -City-</h2>
+                <div>
+                    <p data-js="weather-icon">Weather icon</>
+                    <p data-js="weather-text">Weather text</p>
+                </div>
+
+                <div class="grid-3-columns">
+                    <p data-js="temperature">temperature</p>
+                    <p data-js="wind-velocity">Wind velocity</p>
+                    <p data-js="humidity">Humidity</p>
                 </div>
             </section>
         </main>
