@@ -30,7 +30,7 @@ header {
     margin: 80px 0 16px 0;
 }
 
-.city-card {
+.main-content {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -39,6 +39,10 @@ header {
 
 .form-container {
     margin-bottom: 16px;
+}
+
+.city-card {
+    display: none;
 }
 
 .search-input {
@@ -52,7 +56,7 @@ header {
     background-color: #f7f7f7;
 }
 
-.city-information {
+.city-details {
     width: 600px;
     color: #212121;
     display: flex;
@@ -66,9 +70,20 @@ header {
 h2 {
     font-size: 30px;
     letter-spacing: -0.5px;
+    border-bottom: 2px solid #212121;
 }
 
-.grid-3-columns {
+.info-text {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.grid-2-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
 }
