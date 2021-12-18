@@ -13,27 +13,36 @@
 <body>
     <div class="container">
         <header>
-            <h1>Weather Information</h1>
+            <h1>Informações do Clima</h1>
         </header>
     
-        <main class="city-card">
+        <main class="main-content">
             <form data-js="query-form" class="form-container">
                 <input type="text" name="city" class="search-input" placeholder="Ex: Miami" autofocus autocomplete="off" />
             </form>
 
-            <section data-js="city-weather" class="city-information">
-                <h2>Weather in -City-</h2>
-                <div>
-                    <p data-js="weather-icon">Weather icon</>
-                    <p data-js="weather-text">Weather text</p>
-                </div>
-
-                <div class="grid-3-columns">
-                    <p data-js="temperature">temperature</p>
-                    <p data-js="wind-velocity">Wind velocity</p>
-                    <p data-js="humidity">Humidity</p>
-                </div>
-            </section>
+            <div data-js="city-weather" class="city-card">
+                <section class="city-details">
+                    <h2 data-js="city-name">Clima na -City-</h2>
+                    <div>
+                        <img data-js="weather-icon" src="" alt="Weather icon" />
+                        <p class="info-text" data-js="weather-text">Weather text</p>
+                        <p class="info-text" data-js="temperature-min-max">Minimum | Maximum</p>
+                        <p class="info-text" data-js="temperature-real">Real Feel</p>
+                    </div>
+    
+                    <div class="grid-2-columns">
+                        <div>
+                            <img class="icon" src="src/windVelocity.svg" alt="Wind velocity" />
+                            <p class="info-text" data-js="wind-velocity">Wind velocity</p>
+                        </div>
+                        <div>
+                            <img class="icon" src="src/humidityIcon.svg" alt="Humidity" />
+                            <p class="info-text" data-js="humidity">Humidity</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
     
