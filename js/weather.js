@@ -1,4 +1,4 @@
-const APIKey = '9mToCLrVoKdgp3mZdQZYhBXbhNDkfXQN';
+const APIKey = 'Ry4yHLTSEAlQdX31AehIozwvVSbefGG1';
 const baseUrl = 'http://dataservice.accuweather.com';
 
 const getCityData = async query => {
@@ -14,12 +14,10 @@ const getCityData = async query => {
 const getCityWeather = async query => {
     try {
         const [{ Key }] = await getCityData(query);
-        const weatherData = await fetch(`${baseUrl}/currentconditions/v1/${Key}?apikey=${APIKey}&language=pt-br`)
+        const weatherData = await fetch(`${baseUrl}/currentconditions/v1/${Key}?apikey=${APIKey}&language=pt-br&details=true`)
         
         return weatherData.json()
     } catch (error) {
         console.log(error);
     }
 }
-
-getCityWeather('cuiabá')
