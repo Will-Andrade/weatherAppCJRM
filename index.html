@@ -18,27 +18,58 @@
     
         <main class="main-content">
             <form data-js="query-form" class="form-container">
-                <input type="text" name="city" class="search-input" placeholder="Ex: Miami" autofocus autocomplete="off" />
+                <input 
+                    type="text" 
+                    name="city" 
+                    class="search-input" 
+                    placeholder="Ex: Cuiabá" 
+                    autofocus 
+                    autocomplete="off" 
+                />
             </form>
 
             <div data-js="city-weather" class="city-card">
                 <section class="city-details">
-                    <h2 data-js="city-name">Clima na -City-</h2>
+                    <h2 data-js="city-name">Clima em</h2>
                     <div>
-                        <img data-js="weather-icon" src="" alt="Weather icon" />
-                        <p class="info-text" data-js="weather-text">Weather text</p>
-                        <p class="info-text" data-js="temperature-min-max">Minimum | Maximum</p>
-                        <p class="info-text" data-js="temperature-real">Real Feel</p>
+                        <img 
+                            data-js="weather-icon" 
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+                            alt="Weather icon" 
+                        />
+                        <p class="info-text" data-js="weather-text">
+                            Detalhes do clima
+                        </p>
+                        <p class="info-text" data-js="temperature-min-max">
+                            Máxima | Mínima
+                        </p>
+                        <p class="info-text" data-js="temperature-real">
+                            Sensação real
+                        </p>
                     </div>
     
                     <div class="grid-2-columns">
                         <div>
-                            <img class="icon" src="src/windVelocity.svg" alt="Wind velocity" />
-                            <p class="info-text" data-js="wind-velocity">Wind velocity</p>
+                            <img 
+                                class="icon" 
+                                src="src/windVelocity.svg" 
+                                alt="Wind velocity" 
+                                title="Velocidade do Vento" 
+                            />
+                            <p class="info-text" data-js="wind-velocity">
+                                Velocidade do vento
+                            </p>
                         </div>
                         <div>
-                            <img class="icon" src="src/humidityIcon.svg" alt="Humidity" />
-                            <p class="info-text" data-js="humidity">Humidity</p>
+                            <img 
+                                class="icon" 
+                                src="src/humidityIcon.svg" 
+                                alt="Humidity" 
+                                title="Humidade Relativa" 
+                            />
+                            <p class="info-text" data-js="humidity">
+                                Humidade relativa
+                            </p>
                         </div>
                     </div>
                 </section>
