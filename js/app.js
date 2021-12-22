@@ -10,6 +10,12 @@ const temperatureRealFeel = document
 const windVelocity = document.querySelector('[data-js="wind-velocity"]');
 const weatherHumidity = document.querySelector('[data-js="humidity"]');
 
+const showCityContainer = () => {
+    if (cityWeatherContainer.classList.contains('city-card')) {
+        cityWeatherContainer.classList.remove('city-card');
+    }
+};
+
 const generateCityWeatherCard = async searchQuery => {
     const [{ Key, LocalizedName }] = await getCityObject(searchQuery);
     const [{ 
@@ -22,7 +28,6 @@ const generateCityWeatherCard = async searchQuery => {
         Wind: { Speed }
     }] = await getCityWeather(Key);
 
-    cityWeatherContainer.style.display = 'block';
     cityName.textContent = `Clima em ${LocalizedName}`;
     weatherIconContainer.src = `src/icons/${WeatherIcon}.svg`;
     weatherTextContainer.textContent = 
@@ -33,6 +38,16 @@ const generateCityWeatherCard = async searchQuery => {
         `Sensação Térmica ${RealFeelTemperature.Metric.Value}°C`;
     windVelocity.textContent = `${Speed.Metric.Value} km/h`;
     weatherHumidity.textContent = `${RelativeHumidity}%`;
+
+    showCityContainer();
+};
+
+const showLocalStorageCity = () => {
+    const previousCity = localStorage.getItem('city');
+
+    if (previousCity) {
+        generateCityWeatherCard(previousCity);
+    }
 };
 
 citySearch.addEventListener('submit', e => {
@@ -41,5 +56,8 @@ citySearch.addEventListener('submit', e => {
     const searchQuery = e.target.city.value;
 
     generateCityWeatherCard(searchQuery);
+    localStorage.setItem('city', searchQuery);
     citySearch.reset();
 });
+
+showLocalStorageCity();
