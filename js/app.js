@@ -16,7 +16,7 @@ const showCityContainer = () => {
     }
 };
 
-const generateCityWeatherCard = async searchQuery => {
+const fetchCityWeatherInfo = async searchQuery => {
     const [{ Key, LocalizedName }] = await getCityObject(searchQuery);
     const [{ 
         RealFeelTemperature,
@@ -27,6 +27,30 @@ const generateCityWeatherCard = async searchQuery => {
         RelativeHumidity,
         Wind: { Speed }
     }] = await getCityWeather(Key);
+
+    return {
+        LocalizedName,
+        RealFeelTemperature,
+        Temperature,
+        Maximum, Minimum,
+        WeatherIcon,
+        WeatherText,
+        RelativeHumidity,
+        Speed
+    };
+}
+
+const generateCityWeatherCard = async searchQuery => {
+    const { 
+        LocalizedName,
+        RealFeelTemperature,
+        Temperature,
+        Maximum, Minimum,
+        WeatherIcon,
+        WeatherText,
+        RelativeHumidity,
+        Speed 
+    } = await fetchCityWeatherInfo(searchQuery);
 
     cityName.textContent = `Clima em ${LocalizedName}`;
     weatherIconContainer.src = `src/icons/${WeatherIcon}.svg`;
@@ -50,7 +74,7 @@ const showLocalStorageCity = () => {
     }
 };
 
-citySearch.addEventListener('submit', e => {
+const handleCityForm = e => {
     e.preventDefault();
     
     const searchQuery = e.target.city.value;
@@ -58,6 +82,8 @@ citySearch.addEventListener('submit', e => {
     generateCityWeatherCard(searchQuery);
     localStorage.setItem('city', searchQuery);
     citySearch.reset();
-});
+};
+
+citySearch.addEventListener('submit', handleCityForm);
 
 showLocalStorageCity();
